@@ -30,9 +30,7 @@ Show examples of usage:
 
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* no feature yet.
 
 To-do list:
 * Understand the EM model.
