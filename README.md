@@ -12,8 +12,8 @@
 * [Contact](#contact)
 
 ## General info
-The final objective is to have a script able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
-This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning optimization.
+* The final objective is to have a script able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
+* This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning optimization.
 
 ## Screenshots
 ![Example screenshot](EM_efficiency.png)
