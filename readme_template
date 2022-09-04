@@ -1,5 +1,6 @@
-# Project Name
-> Here goes your awesome project description!
+# Electric Motor (EM) efficiency map model
+> This is a project for model the electric motor efficiency map based on a published scientific paper.
+> The final objective is to have a script able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,15 +13,13 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning optimization
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Plain Python and its specilized lybraries
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
@@ -36,8 +35,10 @@ List of features ready and TODOs for future development
 * Awesome feature 3
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Understand the EM model.
+* Generate three interdependent value lists: EM speed/rpm, torque and efficiency.
+* Code an interpolation function for the values not covered within the lists, so efficiency could be delivered continuously across speed and torque ranges.
+
 
 ## Status
 Project is: _in progress_, _finished_, _no longer continue_ and why?
@@ -46,4 +47,4 @@ Project is: _in progress_, _finished_, _no longer continue_ and why?
 Add here credits. Project inspired by..., based on...
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+rdt333@gmail.com - feel free to contact me!
