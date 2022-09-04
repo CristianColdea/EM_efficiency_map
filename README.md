@@ -39,7 +39,7 @@ To-do list:
 
 
 ## Status
-Project is: _in progress.
+* Project is: _in progress.
 
 ## Inspiration
 https://www.researchgate.net/publication/308830029_Efficiency_maps_of_electrical_machines
