@@ -22,7 +22,7 @@ This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning opt
 * Plain Python and its specilized lybraries
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+Keep the scripts and files in the same folder.
 
 ## Code Examples
 Show examples of usage:
