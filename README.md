@@ -19,7 +19,7 @@ This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning opt
 ![Example screenshot](EM_efficiency.png)
 
 ## Technologies
-* Plain Python and its specilized lybraries
+* Plain Python and its specialized lybraries
 
 ## Setup
 Keep the scripts and files in the same folder.
