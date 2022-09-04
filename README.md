@@ -41,7 +41,7 @@ To-do list:
 
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project is: _in progress.
 
 ## Inspiration
 Add here credits. Project inspired by..., based on...
