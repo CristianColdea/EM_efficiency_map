@@ -1,6 +1,5 @@
 # Electric Motor (EM) efficiency map model
 > This is a project for model the electric motor efficiency map based on a published scientific paper.
-> The final objective is to have a script able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
 
 ## Table of contents
 * [General info](#general-info)
@@ -13,7 +12,8 @@
 * [Contact](#contact)
 
 ## General info
-This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning optimization
+The final objective is to have a script able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
+This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning optimization.
 
 ## Screenshots
 ![Example screenshot](EM_efficiency.png)
