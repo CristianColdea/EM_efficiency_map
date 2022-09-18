@@ -26,7 +26,7 @@
 
 ## Code Examples
 Show examples of usage:
-`put-your-code-here`
+no code yet
 
 ## Features
 List of features ready and TODOs for future development
@@ -34,8 +34,7 @@ List of features ready and TODOs for future development
 
 To-do list:
 * Understand the EM model.
-* Generate three interdependent value lists: EM speed/rpm, torque and efficiency.
-* Code an interpolation function for the values not covered within the lists, so efficiency could be delivered continuously across speed and torque ranges.
+* Efficiency is computed based on regression => we need a function to implement the regressor so efficiency could be delivered continuously across speed     and torque ranges.
 
 
 ## Status
