@@ -26,7 +26,7 @@
 
 ## Code Examples
 Show examples of usage:
-no code yet
+* no code yet
 
 ## Features
 List of features ready and TODOs for future development
