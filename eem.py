@@ -13,3 +13,6 @@ def eem(t_max, omg_max, t, omg, type='IPM', t_const=False, P_const=False):
         if(type == 'IPM'):
             efficiency = 1
         else: print("Two equation fitting is computed for IPM motor type only.")
+    else:
+        if(type == 'SPM'):
+            efficiency = 2 2 
