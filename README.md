@@ -40,8 +40,8 @@ List of features ready and TODOs for future development
 To-do list:
 * ~~Understand the EM model~~.
 * ~~Efficiency is computed based on regression => we need a function to implement the regressor so efficiency could be delivered continuously across speed     and torque ranges~~.
-* Implement regressor for IPM and ISM motor types, operating under one regime.
-* Implement regressors
+* ~~Implement regressor for IPM and ISM motor types, operating under one regime~~.
+* Implement regressors for IPM motor type, operating under constant torque and power regimes.
 
 
 ## Status
