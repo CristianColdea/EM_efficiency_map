@@ -35,7 +35,7 @@ List of features ready and TODOs for future development
 * The loss function for both IPM and ISM motor types, operating under one regime (i.e., no constant torque or power regimes) are covered already in the     script.
 
 To-do list:
-* Understand the EM model.
+* ~~Understand the EM model~~.
 * Efficiency is computed based on regression => we need a function to implement the regressor so efficiency could be delivered continuously across speed     and torque ranges.
 
 
