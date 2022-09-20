@@ -28,9 +28,13 @@
 
 ## Code Examples
 Show examples of usage:
-* Import the script as a python module 
+* Import the script as a python module.
 ```
 import eem.py as eem
+```
+* Call the efficiency function within the module with the appropriated args.
+```
+efficiency = eem.eem(arg1, arg2, ...)
 ```
 
 ## Features
