@@ -28,7 +28,7 @@
 
 ## Code Examples
 Show examples of usage:
-* No examples of usage yet, the script is in progress.
+* Import the script as a python module.
 
 ## Features
 List of features ready and TODOs for future development
