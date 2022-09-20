@@ -28,7 +28,10 @@
 
 ## Code Examples
 Show examples of usage:
-* Import the script as a python module import eem.py as eem.
+* Import the script as a python module 
+'''
+import eem.py as eem
+'''
 
 ## Features
 List of features ready and TODOs for future development
