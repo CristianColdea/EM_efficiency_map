@@ -28,11 +28,11 @@
 
 ## Code Examples
 Show examples of usage:
-* no examples of usage yet, the script is in progress.
+* No examples of usage yet, the script is in progress.
 
 ## Features
 List of features ready and TODOs for future development
-* no feature yet.
+* The loss function for both IPM and ISM motor types, operating under one regime (i.e., no constant torque or power regimes) are covered already in the     script.
 
 To-do list:
 * Understand the EM model.
