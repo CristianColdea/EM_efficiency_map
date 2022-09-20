@@ -14,6 +14,8 @@
 ## General info
 * The final objective is to have a script able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
 * This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning optimization.
+* CAVEAT_1 The regression coefficients were normalised to base values, which are 250 Nm for torque and 12 kr/mim for speed (this is the rated motor speed     used for the model).
+* CAVEAT_2 The script covers the situation of motor operating under constant torque and power. The user must be sure the motor works under this regimes     indeed. Moreover, the motor speed border between the two afore mentioned working regimes must be known (e.g., (3-3.3) kr/min as upper limit of constant   torque regime).
 
 ## Screenshots
 ![Example screenshot](EM_efficiency.png)
@@ -26,7 +28,7 @@
 
 ## Code Examples
 Show examples of usage:
-* no code yet
+* no examples of usage yet, the script is in progress.
 
 ## Features
 List of features ready and TODOs for future development
