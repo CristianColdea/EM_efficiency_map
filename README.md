@@ -21,7 +21,7 @@
 ![Example screenshot](EM_efficiency.png)
 
 ## Technologies
-* Plain Python and some of its specialized lybraries
+* Plain Python and some of its specialized lybraries.
 
 ## Setup
 * Keep the scripts and files in the same folder.
@@ -38,7 +38,7 @@ efficiency = eem.eem(arg1, arg2, ...)
 ```
 
 ## Features
-List of features ready and TODOs for future development
+List of features ready and TODOs for future development:
 * The loss function for both IPM and ISM motor types, operating under one regime (i.e., no constant torque or power regimes) are covered already in the     script.
 
 To-do list:
