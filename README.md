@@ -21,7 +21,7 @@
 ![Example screenshot](EM_efficiency.png)
 
 ## Technologies
-* Plain Python and some of its specialized lybraries.
+* Plain _Python_ and some of its specialized lybraries.
 
 ## Setup
 * Keep the scripts and files in the same folder.
