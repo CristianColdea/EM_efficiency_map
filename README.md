@@ -28,7 +28,7 @@
 
 ## Code Examples
 Show examples of usage:
-* Import the script as a python module.
+* Import the script as a _Python_ module.
 ```
 import eem.py as eem
 ```
