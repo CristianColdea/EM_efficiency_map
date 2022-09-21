@@ -23,5 +23,6 @@ def eem(P_rat, t, omg, type='IPM', t_const=False, P_const=False):
             loss = -0.033 + (0.239 * omg) + (0.47 * t) - (0.334 * (omg**2)) -
                    (1.022 * t * omg) + (0.103 * (t**2)) + (0.171 * (omg**3)) +
                    (0.534 * (omg**2) * t) + (1.071 * (t**2) * omg) +
-                   (0.339 * (t**3)) 
-    return (P_rat - loss) / P_rat
+                   (0.339 * (t**3))
+    
+    return (t * omg * (11 / 105000)) / (t * omg * (11 / 105000) + loss)
