@@ -1,43 +1,53 @@
 """
-Script for Electric Motor Efficiency computation.
+Script for Electric Motor (EM) Efficiency computation.
 """
 
-def eem(t, omg, type='IPM', t_const=False, P_const=False):
+import sys
+
+def eem(T_inst, n, T_ovr, type='IPM', T_const=False, P_const=False):
     """
     Function to compute efficiency based on regression.
-    Takes as inputss instantaneous torque and speed,
-    EM type, wether the motor works in constant torque or power regime.
+    Takes as inputs instantaneous torque, in Newton x meter
+    and speed, in krpm, overload torque capability,
+    in Newton x meter, EM type, wether the motor works in
+    constant torque or power regime.
     Outputs the EM efficiency on the given conditions.
     """
-    if(t_const or P_const):  # if EM is under constant torque or power regimes
-        if(type == 'IPM'):
-            # loss for the constant torque working regime
-            if(t_const):
-                loss = (-0.004 + (0.117 * omg) + (0.175 * t) - 
-                       (0.316 * (omg**2)) - (0.028 * t * omg) + (0.64 * (t**2)) +
-                       (0.131 * (omg**3)) + (0.8 * (omg**2) * t) -
-                       (0.034 * (t**2) * omg) + (0.084 * (t**3)))
-            # loss for the constant power working regime
-            if(P_const):
-                loss = (0.103 - (0.647 * omg) + (0.958 * t) + (1.2 * (omg**2)) -
-                       (1.547 * t * omg) - (0.944 * (t**2)) -
-                       (0.626 * (omg**3)) + (0.728 * (omg**2) * t) +
-                       (1.466 * (t**2) * omg) + (1.008 * (t**3)))
-        else: print("Two equation fitting is computed for IPM motor type only.")
+
+    # check for the instant torque in relation to overload
+    if(T_inst > T_ovr):
+        sys.exit("The instantaneous torque cannot exceed overload capability")
     else:
-        if(type == 'SPM'):
-            loss = (-0.002 + (0.175 * omg) - (0.065 * t) + (0.181 * (omg**2)) +
-                   (0.577 * t * omg) + (0.697 * (t**2)) + (0.443 * (omg**3)) -
-                   (0.542 * (omg**2) * t) - (1.043 * (t**2) * omg) +
-                   (0.942 * (t**3)))
-        if(type == 'IPM'):
-            loss = (-0.033 + (0.239 * omg) + (0.47 * t) - (0.334 * (omg**2)) -
-                   (1.022 * t * omg) + (0.103 * (t**2)) + (0.171 * (omg**3)) +
-                   (0.534 * (omg**2) * t) + (1.071 * (t**2) * omg) +
-                   (0.339 * (t**3)))
+        T = T_inst / T_ovr
+        if(T_const or P_const):  # if EM is under constant torque or power regimes
+            if(type == 'IPM'):
+                # loss for the constant torque working regime
+                if(T_const):
+                    loss = (-0.004 + (0.117 * n) + (0.175 * T) - 
+                           (0.316 * (n**2)) - (0.028 * T * n) + (0.64 * (T**2)) +
+                           (0.131 * (n**3)) + (0.8 * (n**2) * T) -
+                           (0.034 * (T**2) * n) + (0.084 * (T**3)))
+                # loss for the constant power working regime
+                if(P_const):
+                    loss = (0.103 - (0.647 * n) + (0.958 * T) + (1.2 * (n**2)) -
+                           (1.547 * T * n) - (0.944 * (T**2)) -
+                           (0.626 * (n**3)) + (0.728 * (n**2) * T) +
+                           (1.466 * (T**2) * n) + (1.008 * (T**3)))
+            else: print("Two equation fitting is computed for IPM motor type only.")
+        else:
+            if(type == 'SPM'):
+                loss = (-0.002 + (0.175 * n) - (0.065 * T) + (0.181 * (n**2)) +
+                       (0.577 * T * n) + (0.697 * (T**2)) + (0.443 * (n**3)) -
+                       (0.542 * (n**2) * T) - (1.043 * (T**2) * n) +
+                       (0.942 * (T**3)))
+            if(type == 'IPM'):
+                loss = (-0.033 + (0.239 * n) + (0.47 * T) - (0.334 * (n**2)) -
+                       (1.022 * T * n) + (0.103 * (T**2)) + (0.171 * (n**3)) +
+                       (0.534 * (n**2) * T) + (1.071 * (T**2) * n) +
+                       (0.339 * (T**3)))
 
     print("The loss is: ", loss, " [kW]")
     
-    return (t * omg * (11 / 105000)) / (t * omg * (11 / 105000) + loss)
+    return (T * n * (1 / 9550)) / (T * n * (1 / 9550) + loss)
 
 print(eem(150, 8500))
