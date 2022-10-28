@@ -7,8 +7,8 @@ import sys
 def eem(T_inst, n_inst, T_ovr, n_max, type='IPM', T_const=False, P_const=False):
     """
     Function to compute efficiency based on regression.
-    Takes as inputs instantaneous torque, in Newton x meter
-    and speed, in krpm, overload torque capability,
+    Takes as inputs instantaneous torque, in Newton x meter,
+    instantaneous speed, in krpm, overload torque capability,
     in Newton x meter, maximum speed, in krpm, EM type,
     wether the motor works in constant torque or power regime.
     Outputs the EM efficiency on the given conditions.
