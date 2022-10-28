@@ -17,6 +17,9 @@ def eem(T_inst, n_inst, T_ovr, n_max, type='IPM', T_const=False, P_const=False):
     # check for the instant torque in relation to overload
     if(T_inst > T_ovr):
         sys.exit("The instantaneous torque cannot exceed overload capability")
+    # check for the instantantaneous speed in relation to max
+    if(n_inst > n_max):
+        sys.exit("The instantaneous speed cannot exceed max value")
     else:
         T = T_inst / T_ovr
         if(T_const or P_const):  # if EM is under constant torque or power regimes
