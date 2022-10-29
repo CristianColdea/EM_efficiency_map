@@ -14,19 +14,22 @@ def eem(T_inst, n_inst, T_ovr, n_max, type='IPM', T_const=False, P_const=False):
     Outputs the EM efficiency on the given conditions.
     """
 
-    # check for the instant torque in relation to overload
+    # check for the instantaneous torque in relation to overload
     if(T_inst > T_ovr):
         sys.exit("The instantaneous torque cannot exceed overload capability")
+    
     # check for the instantantaneous speed in relation to max
     if(n_inst > n_max):
         sys.exit("The instantaneous speed cannot exceed max value")
-    else:
-        T = T_inst / T_ovr
-        if(T_const or P_const):  # if EM is under constant torque or power regimes
-            if(type == 'IPM'):
-                # loss for the constant torque working regime
-                if(T_const):
-                    loss = (-0.004 + (0.117 * n) + (0.175 * T) - 
+   
+    T = T_inst / T_ovr
+    n = n_inst / n_max
+    
+    if(T_const or P_const):  # if EM is under constant torque or power regimes
+        if(type == 'IPM'):
+            # loss for the constant torque working regime
+            if(T_const):
+                loss = (-0.004 + (0.117 * n) + (0.175 * T) - 
                            (0.316 * (n**2)) - (0.028 * T * n) + (0.64 * (T**2)) +
                            (0.131 * (n**3)) + (0.8 * (n**2) * T) -
                            (0.034 * (T**2) * n) + (0.084 * (T**3)))
