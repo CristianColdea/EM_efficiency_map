@@ -50,10 +50,11 @@ def eem(T_inst, n_inst, T_ovr, n_max, type='IPM', T_const=False, P_const=False):
             loss = (-0.033 + (0.239 * n) + (0.47 * T) - (0.334 * (n**2)) -
                    (1.022 * T * n) + (0.103 * (T**2)) + (0.171 * (n**3)) +
                    (0.534 * (n**2) * T) + (1.071 * (T**2) * n) +
-                       (0.339 * (T**3)))
+                   (0.339 * (T**3)))
 
     print("The loss is: ", loss, " [kW]")
     
     return (T * n * (1 / 9550)) / (T * n * (1 / 9550) + loss)
 
-print(eem(150, 8500))
+# check the script
+print(eem(70, 8500, 150, 12000))
