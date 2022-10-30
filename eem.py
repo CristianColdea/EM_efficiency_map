@@ -30,26 +30,26 @@ def eem(T_inst, n_inst, T_ovr, n_max, type='IPM', T_const=False, P_const=False):
             # loss for the constant torque working regime
             if(T_const):
                 loss = (-0.004 + (0.117 * n) + (0.175 * T) - 
-                           (0.316 * (n**2)) - (0.028 * T * n) + (0.64 * (T**2)) +
-                           (0.131 * (n**3)) + (0.8 * (n**2) * T) -
-                           (0.034 * (T**2) * n) + (0.084 * (T**3)))
-                # loss for the constant power working regime
-                if(P_const):
-                    loss = (0.103 - (0.647 * n) + (0.958 * T) + (1.2 * (n**2)) -
-                           (1.547 * T * n) - (0.944 * (T**2)) -
-                           (0.626 * (n**3)) + (0.728 * (n**2) * T) +
-                           (1.466 * (T**2) * n) + (1.008 * (T**3)))
-            else: print("Two equation fitting is computed for IPM motor type only.")
-        else:
-            if(type == 'SPM'):
-                loss = (-0.002 + (0.175 * n) - (0.065 * T) + (0.181 * (n**2)) +
-                       (0.577 * T * n) + (0.697 * (T**2)) + (0.443 * (n**3)) -
-                       (0.542 * (n**2) * T) - (1.043 * (T**2) * n) +
-                       (0.942 * (T**3)))
-            if(type == 'IPM'):
-                loss = (-0.033 + (0.239 * n) + (0.47 * T) - (0.334 * (n**2)) -
-                       (1.022 * T * n) + (0.103 * (T**2)) + (0.171 * (n**3)) +
-                       (0.534 * (n**2) * T) + (1.071 * (T**2) * n) +
+                       (0.316 * (n**2)) - (0.028 * T * n) + (0.64 * (T**2)) +
+                       (0.131 * (n**3)) + (0.8 * (n**2) * T) -
+                       (0.034 * (T**2) * n) + (0.084 * (T**3)))
+            # loss for the constant power working regime
+            if(P_const):
+                loss = (0.103 - (0.647 * n) + (0.958 * T) + (1.2 * (n**2)) -
+                       (1.547 * T * n) - (0.944 * (T**2)) -
+                       (0.626 * (n**3)) + (0.728 * (n**2) * T) +
+                       (1.466 * (T**2) * n) + (1.008 * (T**3)))
+        else: print("Two equation fitting is computed for IPM motor type only.")
+    else:
+        if(type == 'SPM'):
+            loss = (-0.002 + (0.175 * n) - (0.065 * T) + (0.181 * (n**2)) +
+                   (0.577 * T * n) + (0.697 * (T**2)) + (0.443 * (n**3)) -
+                   (0.542 * (n**2) * T) - (1.043 * (T**2) * n) +
+                   (0.942 * (T**3)))
+        if(type == 'IPM'):
+            loss = (-0.033 + (0.239 * n) + (0.47 * T) - (0.334 * (n**2)) -
+                   (1.022 * T * n) + (0.103 * (T**2)) + (0.171 * (n**3)) +
+                   (0.534 * (n**2) * T) + (1.071 * (T**2) * n) +
                        (0.339 * (T**3)))
 
     print("The loss is: ", loss, " [kW]")
