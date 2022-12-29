@@ -57,4 +57,4 @@ def eem(T_inst, n_inst, T_ovr, n_max, type='IPM', T_const=False, P_const=False):
     return (T * n * (1 / 9550)) / (T * n * (1 / 9550) + loss)
 
 # check the script
-print(eem(70, 8500, 150, 12000))
+print(eem(70, 8500, 250, 12000))
