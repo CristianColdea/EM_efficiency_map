@@ -55,7 +55,8 @@ def eem(T_inst, n_inst, T_ovr, n_max, type='IPM', T_const=False, P_const=False):
     print("The loss is: ", loss, " [kW]")
     print("The instantaneous power is ", (T_inst * n_inst * (11 / 105000)), " [kW]")
         
-    return (T * n * (11 / 105000)) / (T * n * (11 / 105000) + loss)
+    return ((T_inst * n_inst * (11 / 105000)) /  
+           (T_inst * n_inst * (11 / 105000) + loss))
 
 # check the script
 print(eem(70, 8500, 150, 12000))
