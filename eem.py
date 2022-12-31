@@ -4,7 +4,7 @@ Script for Electric Motor (EM) Efficiency computation.
 
 import sys
 
-def eem(T_inst, n_inst, T_ovr, n_max, type='IPM', T_const=False, P_const=False):
+def eem(T_inst, n_inst, T_ovr, n_max, type='SPM', T_const=False, P_const=False):
     """
     Function to compute efficiency based on regression.
     Takes as inputs instantaneous torque, in Newton x meter,
