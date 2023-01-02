@@ -59,4 +59,4 @@ def eem(T_inst, n_inst, T_ovr, n_max, P_lb, type='SPM', T_const=False, P_const=F
            (T_inst * n_inst * (11 / 105000) + (P_lb * loss)))
 
 # check the script
-print(eem(28, 2000, 150, 12000))
+print(eem(28, 2000, 150, 12000, 3.2)) 
