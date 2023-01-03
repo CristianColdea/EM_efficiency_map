@@ -4,16 +4,17 @@ Script for Electric Motor (EM) Efficiency computation.
 
 import sys
 
-def eem(T_inst, n_inst, T_ovr, n_max, P_lb, P_rat, type='SPM',
+def eem(T_inst, n_inst, n_max, T_cont, T_ovr, P_lb, P_rat, type='SPM',
         T_const=False, P_const=False):
     """
     Function to compute efficiency based on regression.
     Takes as inputs instantaneous torque, in Newton x meter,
-    instantaneous speed, in krpm, overload torque capability,
-    in Newton x meter, maximum speed, in krpm, maximum loss,
-    in fraction from the rated power, rated power, in kW,
-    EM type, wether the motor works in constant torque or
-    power regime.
+    instantaneous speed, in krpm, maximum speed, in krpm,
+    continous torque, in Newton x meter,
+    overload torque capability as coefficient of the continous torque,
+    maximum loss as coefficient of the  rated power,
+    rated power, in kW, EM type, wether the motor works in constant
+    torque or power regime.
     Outputs the EM efficiency on the given conditions.
     """
 
