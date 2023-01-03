@@ -4,13 +4,14 @@ Script for Electric Motor (EM) Efficiency computation.
 
 import sys
 
-def eem(T_inst, n_inst, T_ovr, n_max, P_lb, type='SPM', T_const=False, P_const=False):
+def eem(T_inst, n_inst, T_ovr, n_max, P_lb, P_r, type='SPM', T_const=False, P_const=False):
     """
     Function to compute efficiency based on regression.
     Takes as inputs instantaneous torque, in Newton x meter,
     instantaneous speed, in krpm, overload torque capability,
     in Newton x meter, maximum speed, in krpm, maximum loss, in kW,
-    EM type, wether the motor works in constant torque or power regime.
+    rated power, in kW, EM type, wether the motor works in constant
+    torque or power regime.
     Outputs the EM efficiency on the given conditions.
     """
 
@@ -21,6 +22,10 @@ def eem(T_inst, n_inst, T_ovr, n_max, P_lb, type='SPM', T_const=False, P_const=F
     # check for the instantantaneous speed in relation to max
     if(n_inst > n_max):
         sys.exit("The instantaneous speed cannot exceed max value")
+
+    # check for the instantaneous power in relation to the rated one
+    if(T_inst * n_inst * (11 / 105000) > P_r):
+        sys.exit("The instantaneous power cannot exceed the rated one")
    
     T = T_inst / T_ovr
     n = n_inst / n_max
@@ -59,4 +64,4 @@ def eem(T_inst, n_inst, T_ovr, n_max, P_lb, type='SPM', T_const=False, P_const=F
            (T_inst * n_inst * (11 / 105000) + (P_lb * loss)))
 
 # check the script
-print(eem(28, 2000, 150, 12000, 3.2)) 
+print(eem(130,3200, 150, 12000, 3.2, 50)) 
