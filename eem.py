@@ -4,14 +4,16 @@ Script for Electric Motor (EM) Efficiency computation.
 
 import sys
 
-def eem(T_inst, n_inst, T_ovr, n_max, P_lb, P_r, type='SPM', T_const=False, P_const=False):
+def eem(T_inst, n_inst, T_ovr, n_max, P_lb, P_rat, type='SPM',
+        T_const=False, P_const=False):
     """
     Function to compute efficiency based on regression.
     Takes as inputs instantaneous torque, in Newton x meter,
     instantaneous speed, in krpm, overload torque capability,
-    in Newton x meter, maximum speed, in krpm, maximum loss, in kW,
-    rated power, in kW, EM type, wether the motor works in constant
-    torque or power regime.
+    in Newton x meter, maximum speed, in krpm, maximum loss,
+    in fraction from the rated power, rated power, in kW,
+    EM type, wether the motor works in constant torque or
+    power regime.
     Outputs the EM efficiency on the given conditions.
     """
 
@@ -24,7 +26,7 @@ def eem(T_inst, n_inst, T_ovr, n_max, P_lb, P_r, type='SPM', T_const=False, P_co
         sys.exit("The instantaneous speed cannot exceed max value")
 
     # check for the instantaneous power in relation to the rated one
-    if(T_inst * n_inst * (11 / 105000) > P_r):
+    if(T_inst * n_inst * (11 / 105000) > P_rat):
         sys.exit("The instantaneous power cannot exceed the rated one")
    
     T = T_inst / T_ovr
@@ -57,11 +59,11 @@ def eem(T_inst, n_inst, T_ovr, n_max, P_lb, P_r, type='SPM', T_const=False, P_co
                    (0.534 * (n**2) * T) + (1.071 * (T**2) * n) +
                    (0.339 * (T**3)))
 
-    print("The loss is: ", (P_lb * loss), " [kW]")
+    print("The loss is: ", (P_lb * P_rat * loss), " [kW]")
     print("The instantaneous power is ", (T_inst * n_inst * (11 / 105000)), " [kW]")
         
     return ((T_inst * n_inst * (11 / 105000)) /  
-           (T_inst * n_inst * (11 / 105000) + (P_lb * loss)))
+           (T_inst * n_inst * (11 / 105000) + (P_lb * P_rat * loss)))
 
 # check the script
-print(eem(130,3200, 150, 12000, 3.2, 50)) 
+print(eem(130, 3200, 150, 12000, 0.07, 50)) 
