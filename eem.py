@@ -4,7 +4,7 @@ Script for Electric Motor (EM) Efficiency computation.
 
 import sys
 
-def eem(T_inst, n_inst, n_max, T_cont, T_ovr, P_lb, P_rat, type='SPM',
+def eem(T_inst, n_inst, n_max, T_cont, c_ovr, c_lb, P_rat, type='SPM',
         T_const=False, P_const=False):
     """
     Function to compute efficiency based on regression.
@@ -17,6 +17,9 @@ def eem(T_inst, n_inst, n_max, T_cont, T_ovr, P_lb, P_rat, type='SPM',
     torque or power regime.
     Outputs the EM efficiency on the given conditions.
     """
+
+    # compute overload torque
+    T_ovr = c_ovr * T_cont
 
     # check for the instantaneous torque in relation to overload
     if(T_inst > T_ovr):
@@ -60,11 +63,11 @@ def eem(T_inst, n_inst, n_max, T_cont, T_ovr, P_lb, P_rat, type='SPM',
                    (0.534 * (n**2) * T) + (1.071 * (T**2) * n) +
                    (0.339 * (T**3)))
 
-    print("The loss is: ", (P_lb * P_rat * loss), " [kW]")
+    print("The loss is: ", (c_lb * P_rat * loss), " [kW]")
     print("The instantaneous power is ", (T_inst * n_inst * (11 / 105000)), " [kW]")
         
     return ((T_inst * n_inst * (11 / 105000)) /  
-           (T_inst * n_inst * (11 / 105000) + (P_lb * P_rat * loss)))
+           (T_inst * n_inst * (11 / 105000) + (c_lb * P_rat * loss)))
 
 # check the script
-print(eem(130, 3200, 150, 12000, 0.07, 50)) 
+print(eem(130, 3200, 12000, 130, 1.15, 0.07, 50)) 
