@@ -14,8 +14,8 @@
 ## General info
 * The final objective is to have a script able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
 * This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning optimization.
-* CAVEAT_1 The regression coefficients were normalised to base values, which are 250 Nm for torque and 12 kr/mim for speed (this is the rated motor speed     used for the model).
-* CAVEAT_2 The script covers the situation of motor operating under constant torque and power. The user must be sure the motor works under this regimes     indeed. Moreover, the motor speed border between the two aforementioned working regimes must be known (e.g., (3-3.3) kr/min as upper limit of constant   torque regime).
+* CAVEAT_1 The regression coefficients were normalised to base values (i.e. torque overload and maximum speed), which are mostly inherent to the electric motor.
+* CAVEAT_2 The script covers the situation of motor operating under constant torque and power. The user must be sure the motor works under this regimes     indeed. Moreover, the  motor speed border between the two aforementioned working regimes must be known (e.g., (3-3.3) kr/min as upper limit of constant   torque regime).
 
 ## Screenshots
 ![Example screenshot](EM_efficiency.png)
@@ -46,11 +46,11 @@ To-do list:
 * ~~Efficiency is computed based on regression => we need a function(s) to implement the regressor so efficiency could be delivered continuously across speed     and torque ranges~~.
 * ~~Implement regressor for IPM and ISM motor types, operating under one regime~~.
 * ~~Implement regressors for IPM motor type, operating under constant torque and power regimes (one regressor for each regime)~~.
-* Test the script.
+* ~~Test the script.~~
 
 
 ## Status
-* Project is: _in progress_.
+* Project is: _finished_.
 
 ## Inspiration
 https://www.researchgate.net/publication/308830029_Efficiency_maps_of_electrical_machines
