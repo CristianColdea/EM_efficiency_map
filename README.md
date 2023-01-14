@@ -12,7 +12,7 @@
 * [Contact](#contact)
 
 ## General info
-* The final objective is to have a script able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
+* The final objective is to have a script/module able to deliver the efficiency value for a certain electric motor working on a specific torque and speed/rpm.
 * This is necessary for a Hybrid Electric Vehicle (HEV) Reinforcement Learning optimization.
 * CAVEAT_1 The regression coefficients were normalised to base values (i.e. torque overload and maximum speed), which are mostly inherent to the electric motor.
 * CAVEAT_2 The script covers the situation of motor operating under constant torque and power. The user must be sure the motor works under this regimes     indeed. Moreover, the  motor speed border between the two aforementioned working regimes must be known (e.g., (3-3.3) kr/min as upper limit of constant   torque regime).
