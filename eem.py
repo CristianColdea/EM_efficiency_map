@@ -1,5 +1,5 @@
 """
-Script for Electric Motor (EM) Efficiency computation.
+Script/module for Electric Motor (EM) Efficiency computation.
 """
 
 import sys
