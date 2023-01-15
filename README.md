@@ -24,7 +24,7 @@
 * Plain _Python_ and some of its specialized lybraries.
 
 ## Setup
-* Keep the scripts and files in the same folder.
+* Keep the scripts/modules and files in the same folder.
 
 ## Code Examples
 Show examples of usage:
